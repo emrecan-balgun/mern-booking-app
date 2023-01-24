@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+
 import "./footer.css";
 
 function Footer() {
   return (
-    <div className='footer'>
+    <div className="footer">
       <div className="fLists">
         <ul className="fList">
           <li className="fListItem">Countries</li>
@@ -40,7 +41,7 @@ function Footer() {
       </div>
       <div className="fText">Copyright © 2023 EB Booking</div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

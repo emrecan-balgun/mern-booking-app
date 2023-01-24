@@ -10,11 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
+import { useNavigate } from "react-router-dom";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./header.css";
-import { useNavigate } from "react-router-dom";
 
 function Header({ type }) {
   const [destination, setDestination] = useState("");
