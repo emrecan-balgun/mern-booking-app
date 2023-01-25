@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import authRoute from "./routes/auth.js";
 import hotelsRoute from "./routes/hotels.js";
@@ -31,7 +32,8 @@ mongoose.connection.on("disconnected", () => {
 
 // Middlewares
 app.use(express.json()); // for parsing application/json
-app.use(cookieParser());
+app.use(cookieParser()); // for parsing cookies
+app.use(cors()); // for cross-origin resource sharing
 
 // Routes
 app.use("/api/auth", authRoute);

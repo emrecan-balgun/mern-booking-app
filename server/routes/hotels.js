@@ -1,6 +1,8 @@
 import express from "express";
 
 import {
+  countByCity,
+  countByType,
   createHotel,
   deleteHotel,
   getHotel,
@@ -13,7 +15,9 @@ const router = express.Router();
 
 router.post("/", verifyAdmin, createHotel); // Create
 router.get("/", getHotels); // Read (All)
-router.get("/:id", getHotel); // Read (One)
+router.get("/find/:id", getHotel); // Read (One)
+router.get("/countByCity", countByCity);
+router.get("/countByType", countByType);
 router.put("/:id", verifyAdmin, updateHotel); // Update
 router.delete("/:id", verifyAdmin, deleteHotel); // Delete
 
