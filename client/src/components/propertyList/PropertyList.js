@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import "./propertyList.css";
 
 function PropertyList() {
-  const { data, loading, error } = useFetch("/hotels/countByType");
+  const { data, loading } = useFetch("/hotels/countByType");
 
   const images = [
     "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
@@ -26,7 +26,7 @@ function PropertyList() {
             <div className="pListItem" key={index}>
             <img
               src={img}
-              alt="photo"
+              alt="property_photo"
               className="pListImg"
             />
             <div className="pListTitles">

@@ -16,6 +16,7 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./header.css";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 function Header({ type }) {
   const navigate = useNavigate();
@@ -36,6 +37,9 @@ function Header({ type }) {
     room: 1,
   });
 
+  const { dispatch } = useContext(SearchContext);
+  const { user } = useContext(AuthContext);
+
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -45,12 +49,11 @@ function Header({ type }) {
     });
   };
 
-  const { dispatch } = useContext(SearchContext);
-
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
   };
+
   return (
     <div className="header">
       <div
@@ -89,7 +92,7 @@ function Header({ type }) {
               Get rewarded for you travels - unlock instant savings of 10% or
               more with a free EB Booking account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
