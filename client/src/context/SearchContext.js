@@ -29,7 +29,7 @@ export const SearchContextProvider = ({ children }) => {
   return (
     <SearchContext.Provider
       value={{
-        city: state.cty,
+        city: state.city,
         dates: state.dates,
         options: state.options,
         dispatch,
