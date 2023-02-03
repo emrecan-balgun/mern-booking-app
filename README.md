@@ -1,1 +1,1 @@
-# Booking APP (MERN)
+# Booking APP (MERN Stack)
